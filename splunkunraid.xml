@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>splunk</Name>
+  <Repository>Kieffer87/splunk</Repository>
+  <Registry>https://hub.docker.com/repository/docker/twod/docker-splunk</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support></Support>
+  <Project>https://www.splunk.com/</Project>
+  <Overview>Splunk for unRAID based on Alpine Linux. Cloned from https://github.com/andrew207/splunk&#xD;
+&#xD;
+The web interface is exposed on port HTTP/8000, data ingest on TCP/9997, syslog on UDP/1514 and API on HTTPS/8089.&#xD;
+</Overview>
+  <Category>Tools:Utilities Network:Management Status:Stable</Category>
+  <WebUI>http://[IP]:8000</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Kieffer87/docker-splunk/master/splunkunraid.xml</TemplateURL>
+  <Icon>https://secure.gravatar.com/avatar/c4cadc82a16e67018f57f1fc2547caa4.jpg</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1568943898</DateInstalled>
+  <Description>Splunk for unRAID based on Alpine Linux. Cloned from https://github.com/andrew207/splunk&#xD;
+&#xD;
+The web interface is exposed on port HTTP/8000, data ingest on TCP/9997, syslog on UDP/1514 and API on HTTPS/8089.&#xD;
+</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort></HostPort>
+        <ContainerPort>8000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort></HostPort>
+        <ContainerPort>8089</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort></HostPort>
+        <ContainerPort>9997</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort></HostPort>
+        <ContainerPort>1514</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/opt/splunkdata</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+	<Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/opt/splunk/etc/apps</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value/>
+      <Name>SPLUNK_CLI_ARGS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>ADMIN_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>PORT_SYSLOG</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>PORT_API</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>PORT_TCPIN</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="DataPersist" Target="FS_DATA" Default="/mnt/user/appdata/docker/splunk/splunkdata" Mode="rw" Description="Persistant Indexed Data (SPLUNK_DB)" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="ConfigPersist" Target="FS_APPS" Default="/mnt/user/appdata/docker/splunk/etc/apps" Mode="rw" Description="Persistant config and app data" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Splunk start args" Target="SPLUNK_CLI_ARGS" Default="--accept-license --no-prompt" Mode="" Description="Arguments to start Splunk with. " Type="Variable" Display="always" Required="true" Mask="false">--accept-license --no-prompt</Config>
+  <Config Name="Admin Password" Target="ADMIN_PASSWORD" Default="changeme2019" Mode="" Description="Splunk Web UI admin password." Type="Variable" Display="always" Required="true" Mask="true">changeme2019</Config>
+  <Config Name="Http Web Port" Target="PORT_WEB_HTTP" Default="8000" Mode="tcp" Description="HTTP Web UI" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="UDP Syslog Port" Target="PORT_SYSLOG" Default="514" Mode="udp" Description="Syslog UDP input" Type="Port" Display="always" Required="false" Mask="false">514</Config>
+  <Config Name="UF TCP Data Port" Target="PORT_TCPIN" Default="9997" Mode="tcp" Description="SplunkTCP input" Type="Port" Display="always" Required="false" Mask="false">9997</Config>
+  <Config Name="Management/API Port" Target="PORT_API" Default="8089" Mode="tcp" Description="HTTPS API" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
+
+</Container>
