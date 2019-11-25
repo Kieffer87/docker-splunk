@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>Splunk</Name>
-  <Repository>Kieffer87/docker-splunk</Repository>
+  <Repository>kieffer87/docker-splunk</Repository>
   <Registry>https://hub.docker.com/repository/docker/twod/docker-splunk</Registry>
   <Network>bridge</Network>
   <MyIP/>
@@ -88,9 +88,9 @@
   <Config Name="ConfigPersist" Target="FS_APPS" Default="/mnt/user/appdata/docker/splunk/etc/apps" Mode="rw" Description="Persistant config and app data" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Splunk start args" Target="SPLUNK_START_ARGS" Default="--accept-license --no-prompt" Mode="" Description="Arguments to start Splunk with. " Type="Variable" Display="always" Required="true" Mask="false">--accept-license --no-prompt</Config>
   <Config Name="Admin Password" Target="SPLUNK_PASSWORD" Default="changeme2019" Mode="" Description="Splunk Web UI admin password." Type="Variable" Display="always" Required="true" Mask="true">changeme2019</Config>
-  <Config Name="Http Web Port" Target="PORT_WEB_HTTP" Default="8000" Mode="tcp" Description="HTTP Web UI" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
-  <Config Name="UDP Syslog Port" Target="PORT_SYSLOG" Default="514" Mode="udp" Description="Syslog UDP input" Type="Port" Display="always" Required="false" Mask="false">514</Config>
-  <Config Name="UF TCP Data Port" Target="PORT_TCPIN" Default="9997" Mode="tcp" Description="SplunkTCP input" Type="Port" Display="always" Required="false" Mask="false">9997</Config>
-  <Config Name="Management/API Port" Target="PORT_API" Default="8089" Mode="tcp" Description="HTTPS API" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
+  <Config Name="Http Web Port" Target="8000" Default="8000" Mode="tcp" Description="HTTP Web UI" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="UDP Syslog Port" Target="1514" Default="514" Mode="udp" Description="Syslog UDP input" Type="Port" Display="always" Required="false" Mask="false">514</Config>
+  <Config Name="UF TCP Data Port" Target="9997" Default="9997" Mode="tcp" Description="SplunkTCP input" Type="Port" Display="always" Required="false" Mask="false">9997</Config>
+  <Config Name="Management/API Port" Target="8089" Default="8089" Mode="tcp" Description="HTTPS API" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
 
 </Container>
