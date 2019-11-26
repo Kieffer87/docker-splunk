@@ -3,6 +3,7 @@ FROM splunk/splunk:latest
 
 # Set environment variables
 ENV SPLUNK_HOME /opt/splunk
+ENV SPLUNK_DEFAULTS_URL default.yml
 
 # ARGS
 ARG FS_DATA=/opt/splunk/var
