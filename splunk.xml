@@ -7,18 +7,17 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support></Support>
   <Project>https://github.com/splunk/docker-splunk</Project>
   <Overview>Splunk for unRAID based on the latest Splunk Docker release.</Overview>
   <Category>Tools:Utilities Network:Management Status:Stable</Category>
-  <WebUI>http://[IP]:8000</WebUI>
+  <WebUI>http://[IP]:[PORT:8000]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Kieffer87/docker-splunk/master/splunkunraid.xml</TemplateURL>
   <Icon>https://secure.gravatar.com/avatar/c4cadc82a16e67018f57f1fc2547caa4.jpg</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
   <DateInstalled>1568943898</DateInstalled>
-  <Description>Splunk for unRAID based on the latest Splunk Docker release.</Description>
+  <Description>Splunk for unRAID based on the latest Splunk Docker release. https://github.com/splunk/docker-splunk</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
