@@ -2,11 +2,12 @@
 FROM splunk/splunk:latest
 
 # Copy Default.yml file
-COPY default.yml /tmp/defaults/default.yml
+#COPY default.yml /tmp/defaults/default.yml
 
 # Set environment variables
 ENV SPLUNK_HOME /opt/splunk
 ENV SPLUNK_DEFAULTS_URL /tmp/defaults/default.yml
+ENV OPTIMISTIC_ABOUT_FILE_LOCKING 1
 
 # ARGS
 ARG FS_DATA=/opt/splunk/var
