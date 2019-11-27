@@ -1,9 +1,12 @@
 # Grab base Alpine
 FROM splunk/splunk:latest
 
+# Copy Default.yml file
+COPY default.yml /tmp/defaults/default.yml
+
 # Set environment variables
 ENV SPLUNK_HOME /opt/splunk
-ENV SPLUNK_DEFAULTS_URL default.yml
+ENV SPLUNK_DEFAULTS_URL /tmp/defaults/default.yml
 
 # ARGS
 ARG FS_DATA=/opt/splunk/var
