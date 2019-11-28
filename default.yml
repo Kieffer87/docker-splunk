@@ -1,7 +1,6 @@
-splunk:
+splunk:  
   conf:
-    user-prefs:
-      directory: /opt/splunk/etc/splunk-launch.conf
-      content:
+    splunk-launch:
+      directory: /opt/splunk/etc
         general:
           OPTIMISTIC_ABOUT_FILE_LOCKING: 1
