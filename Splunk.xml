@@ -69,17 +69,17 @@
     </Variable>
     <Variable>
       <Value/>
-      <Name>PORT_SYSLOG</Name>
+      <Name>SYSLOG_PORT</Name>
       <Mode/>
     </Variable>
     <Variable>
       <Value/>
-      <Name>PORT_API</Name>
+      <Name>SPLUNK_SVC_PORT</Name>
       <Mode/>
     </Variable>
     <Variable>
       <Value/>
-      <Name>PORT_TCPIN</Name>
+      <Name>SPLUNK_S2S_PORT</Name>
       <Mode/>
     </Variable>
   </Environment>
@@ -90,6 +90,6 @@
   <Config Name="Admin Password" Target="SPLUNK_PASSWORD" Default="changeme2019" Mode="" Description="Defaults to changeme2019" Type="Variable" Display="always" Required="true" Mask="true">changeme2019</Config>
   <Config Name="HTTP Web Port" Target="8000" Default="8000" Mode="tcp" Description="HTTP Web UI" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
   <Config Name="UDP Syslog Port" Target="1514" Default="1514" Mode="udp" Description="Syslog UDP input" Type="Port" Display="always" Required="false" Mask="false">514</Config>
-  <Config Name="UF TCP Data Port" Target="9997" Default="9997" Mode="tcp" Description="SplunkTCP input" Type="Port" Display="always" Required="false" Mask="false">9997</Config>
-  <Config Name="Management/API Port" Target="8089" Default="8089" Mode="tcp" Description="HTTPS API" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
+  <Config Name="UF Default Forwarding Port" Target="9997" Default="9997" Mode="tcp" Description="SplunkTCP input" Type="Port" Display="always" Required="false" Mask="false">9997</Config>
+  <Config Name="Default Management Port" Target="8089" Default="8089" Mode="tcp" Description="HTTPS API" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
 </Container>
