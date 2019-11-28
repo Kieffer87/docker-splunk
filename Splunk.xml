@@ -94,8 +94,8 @@
   <Config Name="License URI" Target="SPLUNK_LICENSE_URI" Default="Free" Mode="" Description="URI to fetch a Splunk Enterprise license. This can be a local path, a remote URL, or “Free”." Type="Variable" Display="always" Required="true" Mask="false">Free</Config>
   <Config Name="Splunk start args" Target="SPLUNK_START_ARGS" Default="--accept-license --no-prompt" Mode="" Description="Arguments to start Splunk with. Please note, Container will not start without the existence of –accept-license in this variable." Type="Variable" Display="always" Required="true" Mask="false">--accept-license --no-prompt</Config>
   <Config Name="Admin Password" Target="SPLUNK_PASSWORD" Default="changeme2019" Mode="" Description="Default password of the admin user. Defaults to changeme2019" Type="Variable" Display="always" Required="true" Mask="true">changeme2019</Config>
-  <Config Name="HTTP Web Port" Target="8000" Default="8000" Mode="tcp" Description="HTTP Web UI" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
-  <Config Name="UDP Syslog Port" Target="1514" Default="1514" Mode="udp" Description="Syslog UDP input" Type="Port" Display="always" Required="false" Mask="false">514</Config>
-  <Config Name="Default Forwarding Port" Target="9997" Default="9997" Mode="tcp" Description="SplunkTCP input" Type="Port" Display="always" Required="false" Mask="false">9997</Config>
-  <Config Name="Default Management Port" Target="8089" Default="8089" Mode="tcp" Description="HTTPS API" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
+  <Config Name="HTTP Web Port" Target="8000" Default="8000" Mode="tcp" Description="HTTP Web Port" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="UDP Syslog Port" Target="1514" Default="1514" Mode="udp" Description="UDP Syslog Port" Type="Port" Display="always" Required="false" Mask="false">514</Config>
+  <Config Name="Default Forwarding Port" Target="9997" Default="9997" Mode="tcp" Description="Default Forwarding Port" Type="Port" Display="always" Required="false" Mask="false">9997</Config>
+  <Config Name="Default Management Port" Target="8089" Default="8089" Mode="tcp" Description="Default Management Port" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
 </Container>
