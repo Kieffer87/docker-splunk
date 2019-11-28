@@ -4,16 +4,9 @@ FROM splunk/splunk:latest
 # Copy Default.yml file
 COPY default.yml /tmp/defaults/default.yml
 
-# Set environment variables
-#ENV SPLUNK_DEFAULTS_URL /tmp/defaults/default.yml
-
 # ARGS
 ARG FS_DATA=/opt/splunk/var
 ARG FS_APPS=/opt/splunk/etc/apps
-ARG SPLUNK_PASSWORD="changeme2019"
-ARG SPLUNK_LICENSE_URI="FREE"
-ARG SPLUNK_START_ARGS="--accept-license --no-prompt"
-ARG SYSLOG_PORT=1514
 
 # ENVS based on ARGS (so you can configure either at build time or runtime)
 ENV SPLUNK_START_ARGS $SPLUNK_START_ARGS
