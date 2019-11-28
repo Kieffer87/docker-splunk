@@ -2,12 +2,10 @@
 FROM splunk/splunk:latest
 
 # Copy Default.yml file
-#COPY default.yml /tmp/defaults/default.yml
+COPY default.yml /tmp/defaults/default.yml
 
 # Set environment variables
-ENV SPLUNK_HOME /opt/splunk
 ENV SPLUNK_DEFAULTS_URL /tmp/defaults/default.yml
-ENV OPTIMISTIC_ABOUT_FILE_LOCKING 1
 
 # ARGS
 ARG FS_DATA=/opt/splunk/var
@@ -22,10 +20,6 @@ ENV PORT_WEB_HTTP $PORT_WEB_HTTP
 ENV PORT_API $PORT_API
 ENV PORT_TCPIN $PORT_TCPIN
 
-USER root
-RUN mkdir -p ${FS_DATA}
-RUN chown splunk:splunk ${FS_DATA}
-
 # Set up ports and volumes
-VOLUME ["${FS_APPS}", "${SPLUNK_HOME}", "${FS_DATA}"]
+VOLUME ["${FS_APPS}", "${FS_DATA}"]
 EXPOSE ${PORT_WEB_HTTP} ${PORT_API} ${PORT_TCPIN} ${PORT_SYSLOG}
