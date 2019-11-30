@@ -3,7 +3,6 @@
   <Name>Splunk</Name>
   <Repository>twod/docker-splunk</Repository>
   <Registry>https://hub.docker.com/repository/docker/twod/docker-splunk</Registry>
-  <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -11,7 +10,7 @@
   <Project>https://github.com/splunk/docker-splunk</Project>
   <Overview>Splunk for unRAID based on the latest Splunk Docker release.</Overview>
   <Category>Tools:Utilities Network:Management Status:Stable</Category>
-  <WebUI>http://[IP]:[PORT:8000]</WebUI>
+  <WebUI>http://[IP]:[PORT_WEB_HTTP:8000]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Kieffer87/docker-splunk/master/splunkunraid.xml</TemplateURL>
   <Icon>https://secure.gravatar.com/avatar/c4cadc82a16e67018f57f1fc2547caa4.jpg</Icon>
   <ExtraParams/>
@@ -19,83 +18,15 @@
   <CPUset/>
   <DateInstalled>1568943898</DateInstalled>
   <Description>Splunk for unRAID based on the latest Splunk Docker release. https://github.com/splunk/docker-splunk</Description>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort></HostPort>
-        <ContainerPort>8000</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
-        <HostPort></HostPort>
-        <ContainerPort>8089</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
-        <HostPort></HostPort>
-        <ContainerPort>9997</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
-        <HostPort></HostPort>
-        <ContainerPort>1514</ContainerPort>
-        <Protocol>udp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
-  <Data>
-    <Volume>
-      <HostDir></HostDir>
-      <ContainerDir>/opt/splunkdata</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-	<Volume>
-      <HostDir></HostDir>
-      <ContainerDir>/opt/splunk/etc/apps</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-  </Data>
-  <Environment>
-    <Variable>
-      <Value/>
-      <Name>SPLUNK_START_ARGS</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value/>
-      <Name>SPLUNK_PASSWORD</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value/>
-      <Name>SPLUNK_LICENSE_URI</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value/>
-      <Name>SYSLOG_PORT</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value/>
-      <Name>SPLUNK_SVC_PORT</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value/>
-      <Name>SPLUNK_S2S_PORT</Name>
-      <Mode/>
-    </Variable>
-  </Environment>
-  <Labels/>
-  <Config Name="Persistant Data Storage" Target="/opt/splunk/var" Default="/mnt/user/appdata/docker/splunk/splunkdata" Mode="rw" Description="/opt/splunk/var" Type="Path" Display="always" Required="true" Mask="false"/>
-  <Config Name="Persistant Configuration Storage" Target="/opt/splunk/etc/apps" Default="/mnt/user/appdata/docker/splunk/etc/apps" Mode="rw" Description="/opt/splunk/etc/apps" Type="Path" Display="always" Required="true" Mask="false"/>
+\ <Labels/>
+  <Network Default="None">bridge</Network>
+  <Config Name="Persistant Data Storage" Target="/opt/splunk/var" Default="/mnt/user/appdata/docker/splunk/data" Mode="rw" Description="/opt/splunk/var" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Persistant Configuration Storage" Target="/opt/splunk/etc" Default="/mnt/user/appdata/docker/splunk/etc" Mode="rw" Description="/opt/splunk/etc" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="License URI" Target="SPLUNK_LICENSE_URI" Default="Free" Mode="" Description="URI to fetch a Splunk Enterprise license. This can be a local path, a remote URL, or “Free”." Type="Variable" Display="always" Required="true" Mask="false">Free</Config>
-  <Config Name="Splunk start args" Target="SPLUNK_START_ARGS" Default="--accept-license --no-prompt" Mode="" Description="Arguments to start Splunk with. Please note, Container will not start without the existence of –accept-license in this variable." Type="Variable" Display="always" Required="true" Mask="false">--accept-license --no-prompt</Config>
+  <Config Name="Splunk start args" Target="SPLUNK_START_ARGS" Default="--accept-license" Mode="" Description="Arguments to start Splunk with. Please note, Container will not start without the existence of –accept-license in this variable." Type="Variable" Display="always" Required="true" Mask="false">--accept-license --no-prompt</Config>
   <Config Name="Admin Password" Target="SPLUNK_PASSWORD" Default="changeme2019" Mode="" Description="Default password of the admin user. Defaults to changeme2019" Type="Variable" Display="always" Required="true" Mask="true">changeme2019</Config>
-  <Config Name="HTTP Web Port" Target="8000" Default="8000" Mode="tcp" Description="HTTP Web Port" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
-  <Config Name="UDP Syslog Port" Target="1514" Default="1514" Mode="udp" Description="UDP Syslog Port" Type="Port" Display="always" Required="false" Mask="false">514</Config>
-  <Config Name="Default Forwarding Port" Target="9997" Default="9997" Mode="tcp" Description="Default Forwarding Port" Type="Port" Display="always" Required="false" Mask="false">9997</Config>
-  <Config Name="Default Management Port" Target="8089" Default="8089" Mode="tcp" Description="Default Management Port" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
+  <Config Name="HTTP Web Port" Target="PORT_WEB_HTTP" Default="8000" Mode="" Description="HTTP Web Port" Type="Variable" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="UDP Syslog Port" Target="SYSLOG_PORT" Default="1514" Mode="" Description="UDP Syslog Port" Type="Variable" Display="always" Required="true" Mask="false">514</Config>
+  <Config Name="Default Forwarding Port" Target="SPLUNK_S2S_PORT" Default="9997" Mode="" Description="Default Forwarding Port" Type="Variable" Display="always" Required="true" Mask="false">9997</Config>
+  <Config Name="Default Management Port" Target="SPLUNK_SVC_PORT" Default="8089" Mode="" Description="Default Management Port" Type="Variable" Display="always" Required="true" Mask="false">8089</Config>
 </Container>
