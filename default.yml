@@ -1,10 +1,12 @@
 splunk:
   conf:
+    # Splunk will fail to start due to the persistant storage volumes and throw a "unusable filesystem" error. The setting below fixes that.
     splunk-launch:
       directory: /opt/splunk/etc
       content:
         general:
           OPTIMISTIC_ABOUT_FILE_LOCKING: 1
+    # Disable or limit logging to reduce space used.
     log-local:
       directory: /opt/splunk/etc
       content:
