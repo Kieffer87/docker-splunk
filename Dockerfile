@@ -1,10 +1,10 @@
-# Grab base Alpine
+# Grab lasted version of splunk
 FROM splunk/splunk:latest
 
 # Copy Default.yml file
 COPY default.yml /tmp/defaults/default.yml
 
-# ARGS
+# These should match the target directories set in Unraid
 ARG FS_DATA=/opt/splunk/var
 ARG FS_CONFIG=/opt/splunk/etc
 
