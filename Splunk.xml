@@ -10,7 +10,7 @@
   <Project>https://github.com/splunk/docker-splunk</Project>
   <Overview>Splunk for unRAID based on the latest Splunk Docker release.</Overview>
   <Category>Tools:Utilities Network:Management Status:Stable</Category>
-  <WebUI>http://[IP]:[PORT_WEB_HTTP]</WebUI>
+  <WebUI>http://[IP]:[PORT:8000]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Kieffer87/docker-splunk/master/splunkunraid.xml</TemplateURL>
   <Icon>https://secure.gravatar.com/avatar/c4cadc82a16e67018f57f1fc2547caa4.jpg</Icon>
   <ExtraParams/>

@@ -5,3 +5,47 @@ splunk:
       content:
         general:
           OPTIMISTIC_ABOUT_FILE_LOCKING: 1
+    log-local:
+      directory: /opt/splunk/etc
+      content:
+        splunkd:
+          rcategory.HttpPubSubConnection: WARN
+          rcategory.UiHttpListener: ERROR
+          rcategory.TcpOutputProc: WARN
+          rappender.license_usage_maxBackupIndex: 1
+          rappender.license_usage_summary.maxBackupIndex: 1
+          rappender.metrics.maxBackupIndex: 1
+          rappender.audittrail.maxBackupIndex: 1
+          rappender.accesslog.maxBackupIndex: 1
+          rappender.uiaccess.maxBackupIndex: 1
+          rappender.scheduler.maxBackupIndex: 1
+          rappender.remotesearches.maxBackupIndex: 1
+          rappender.idata_ResourceUsage.maxBackupIndex: 1
+          rappender.conf.maxBackupIndex: 1
+          rappender.idata_DiskObjects.maxBackupIndex: 1
+          rappender.idata_KVStore.maxBackupIndex: 1
+          rappender.kvstore_appender.maxBackupIndex: 1
+          rappender.idata_HttpEventCollector.maxBackupIndex: 1
+          rappender.healthreporter.maxBackupIndex: 1
+          rappender.watchdog_appender.maxBackupIndex: 1
+    savedsearches:
+      directory: /opt/splunk/etc/apps/splunk_monitoring_console/local
+      content:
+        DMC Asset - Build Standalone Asset Table:
+          disabled: 0
+        DMC Asset - Build Standalone Computed Groups Only:
+          disabled: 1
+        DMC Asset - Build Full:
+          disabled: 1
+        DMC License Usage Data Cube:
+          disabled: 1
+    savedsearches:
+      directory: /opt/splunk/etc/apps/splunk_archiver/local
+      content:
+        Bucket Copy Trigger:
+          disabled: 1
+    server:
+      directory: /opt/splunk/etc/system/local
+      content:
+        kvstore:
+          disabled: true
