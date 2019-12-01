@@ -17,7 +17,7 @@
   <PostArgs/>
   <CPUset/>
   <Description>Splunk for unRAID based on the latest Splunk Docker release. https://github.com/splunk/docker-splunk</Description>
-\ <Labels/>
+  <Labels/>
   <Network>bridge</Network>
   <Config Name="Persistant Data Storage" Target="/opt/splunk/var" Default="/mnt/user/appdata/docker/splunk/data" Mode="rw" Description="/opt/splunk/var" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Persistant Configuration Storage" Target="/opt/splunk/etc" Default="/mnt/user/appdata/docker/splunk/etc" Mode="rw" Description="/opt/splunk/etc" Type="Path" Display="always" Required="true" Mask="false"/>
