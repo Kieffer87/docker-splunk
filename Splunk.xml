@@ -8,7 +8,7 @@
   <Privileged>false</Privileged>
   <Support></Support>
   <Project>https://github.com/splunk/docker-splunk</Project>
-  <Overview>Splunk for unRAID based on the latest Splunk Docker release.</Overview>
+  <Overview>Splunk for UnRAID based on the latest Splunk Docker release.</Overview>
   <Category>Tools:Utilities Network:Management Status:Stable</Category>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Kieffer87/docker-splunk/master/Splunk.xml</TemplateURL>
@@ -16,7 +16,7 @@
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <Description>Splunk for unRAID based on the latest Splunk Docker release. https://github.com/splunk/docker-splunk</Description>
+  <Description>Splunk for UnRAID based on the latest Splunk Docker release. https://github.com/splunk/docker-splunk</Description>
   <Labels/>
   <Network>bridge</Network>
   <Config Name="Persistent Data Storage" Target="/opt/splunk/var" Default="/mnt/user/appdata/docker/splunk/data" Mode="rw" Description="/opt/splunk/var" Type="Path" Display="always" Required="true" Mask="false"/>
